@@ -72,38 +72,3 @@
     </div>
 
 </div>
-
-
-
-@*@using EntityLayer.Concrete
-    @model List<Category>
-
-    @{
-        ViewBag.Title = "Index";
-        Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    }
-
-    <a href="/AdminCategory/AddCategory/" class="btn btn-default" style="background-color:deepskyblue; margin-block-end:15px;">Yeni Kategori Ekle</a>
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>Kategori Adı</th>
-            <th>Açıklama</th>
-            <th>Durum</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-            <th>Başlıklar</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <th>@item.IDCategory</th>
-                <td>@item.CategoryName</td>
-                <td>@item.CategoryDescription</td>
-                <td>@item.CategoryStatus</td>
-                <td><a href="/AdminCategory/DeleteCategory/@item.IDCategory" class="btn btn-danger">Sil</a></td>
-                <td><a href="/AdminCategory/UpdateCategory/@item.IDCategory" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
-            </tr>
-        }
-    </table>*@
