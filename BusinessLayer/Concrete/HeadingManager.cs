@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public Heading GetByIDBL(int id)
         {
-            return _headingDal.Get(x=>x.IDHeading == id);
+            return _headingDal.Get(x => x.IDHeading == id);
         }
 
         public List<Heading> GetList()
         {
-            return _headingDal.GetList();
+            return _headingDal.List();
         }
 
         public void HeadingAddBL(Heading heading)
@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public void HeadingDelete(Heading heading)
         {
-            _headingDal.Delete(heading);
+            _headingDal.Update(heading);
         }
 
         public void HeadingUpdate(Heading heading)

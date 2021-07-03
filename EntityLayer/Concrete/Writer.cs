@@ -15,12 +15,18 @@ namespace EntityLayer.Concrete
         public string UserName { get; set; }
         [StringLength(50)]
         public string UserSurname { get; set; }
-        [StringLength(100)]
+        [StringLength(250)]
         public string WriterImage { get; set; }
-        [StringLength(50)]
+        [StringLength(200)]
         public string WriterMail { get; set; }
-        [StringLength(20)]
-        public string WriterPassword{ get; set; }
+        [StringLength(200)]
+        public string WriterPassword { get; set; }
+        [StringLength(200)]
+        public String WriterAbout { get; set; }
+        [StringLength(50)]
+        public String WriterTitle { get; set; }
+
+        public bool WriterStatus { get; set; }
 
         public ICollection<Heading> Headings { get; set; }
 

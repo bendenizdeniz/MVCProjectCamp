@@ -25,7 +25,7 @@ namespace DataAccessLayer.Concrete.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Heading> GetList()
+        public List<Heading> List()
         {
             throw new NotImplementedException();
         }

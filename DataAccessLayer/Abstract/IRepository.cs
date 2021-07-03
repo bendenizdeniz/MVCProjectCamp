@@ -9,7 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IRepository<T>
     {
-        List<T> GetList();
+        List<T> List();
 
         void Insert(T item);
 

@@ -1,0 +1,69 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin-bottom: 10px;">Hakkımızda Veri Listesi</h2>
+
+<table class="table table-warning">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Aktif</th>
+        <th>Pasif</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.IDAbout</th>
+            <td>@item.AboutDetails1</td>
+            <td>
+                <a class="btn btn-sm" href="/About/AboutPassive/@item.IDAbout" style=" color: white; background: #006400;">
+                    <i class="fas fa-check"></i> Pasif Yap
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-sm" href="/About/AboutActive/@item.IDAbout" style=" color: white; background: #db0000;">
+                    <i class="fas fa-times"></i> Aktif Yap
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<table style="margin-bottom: 0px;" class="table table-bordered">
+    <tr>
+        <th style="padding-left:650px;">
+            Aktif Hakkımızda
+        </th>
+    </tr>
+
+</table>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Detay</th>
+        <th>Detay</th>
+        <th>Görsel</th>
+        <th>Görsel</th>
+    </tr>
+    <tr>
+        @if (ViewBag.activeAbout != null)
+        {
+            <th>@ViewBag.activeAbout.IDAbout</th>
+            <td>@ViewBag.activeAbout.AboutDetails1</td>
+            <td>@ViewBag.activeAbout.AboutDetails2</td>
+            <td>@ViewBag.activeAbout.AboutImage1</td>
+            <td>@ViewBag.activeAbout.AboutImage2</td>
+
+        }
+    </tr>
+</table>
+
+<br />
+@Html.Action("AboutPartial", "About")
+

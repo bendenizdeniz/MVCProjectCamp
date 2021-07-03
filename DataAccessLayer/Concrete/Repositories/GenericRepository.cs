@@ -30,13 +30,14 @@ namespace DataAccessLayer.Concrete.Repositories
             return _object.SingleOrDefault(filter); //finding just 1 element
         }
 
-        public List<T> GetList()
+        public List<T> List()
         {
             return _object.ToList();
         }
 
         public void Insert(T item)
         {
+
             _object.Add(item);
             c.SaveChanges();
         }
@@ -48,6 +49,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(T item)
         {
+            var updatedEntity = c.Entry(item);
+            updatedEntity.State = EntityState.Modified;
             c.SaveChanges();
         }
     }

@@ -26,7 +26,7 @@ namespace DataAccessLayer.Concrete.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Category> GetList()
+        public List<Category> List()
         {
             return _object.ToList();
         }

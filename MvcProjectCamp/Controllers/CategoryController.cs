@@ -15,6 +15,7 @@ namespace MvcProjectCamp.Controllers
     {
         CategoryManager cm = new CategoryManager(new EFCategoryDal());
 
+        
         public ActionResult Index()
         {
             return View();

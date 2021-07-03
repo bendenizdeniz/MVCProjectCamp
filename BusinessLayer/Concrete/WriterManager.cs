@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public Writer GetByIDBL(int id)
         {
-            throw new NotImplementedException();
+            return _writerDal.Get(x => x.IDWriter == id);
         }
 
         public List<Writer> GetList()
         {
-            return _writerDal.GetList();
+            return _writerDal.List();
         }
 
         public void WriterAddBL(Writer writer)
